@@ -12,13 +12,11 @@ class PostCell: UITableViewCell {
     
     @IBOutlet weak var lblTitle       : UILabel!
     @IBOutlet weak var lblCreatedDate : UILabel!
-    @IBOutlet weak var switchActivate : UISwitch!
 
     var post: Post? {
         didSet {
             self.lblTitle.text = post?.title
-            self.lblCreatedDate.text = post?.createdAt
-            self.switchActivate.isOn = post?.isActivated ?? false
+            self.lblCreatedDate.text = formattedDateFromString(dateString: post?.createdAt ?? "")
         }
     }
     
@@ -33,5 +31,19 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func formattedDateFromString(dateString: String) -> String? {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+
+            return dateFormatter.string(from: date)
+        }
+        
+        return nil
+    }
+
 
 }

@@ -29,20 +29,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMY-7P-clW">
-                                                    <rect key="frame" x="20" y="11" width="325" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMY-7P-clW">
+                                                    <rect key="frame" x="20" y="11" width="374" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfx-Jv-QAd">
-                                                    <rect key="frame" x="353" y="26.5" width="51" height="31"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="49" id="CKk-Qn-ThJ"/>
-                                                    </constraints>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-pp-DRr">
-                                                    <rect key="frame" x="20" y="53.5" width="39.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-pp-DRr">
+                                                    <rect key="frame" x="20" y="53" width="374" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,17 +45,16 @@
                                             <constraints>
                                                 <constraint firstItem="FK0-pp-DRr" firstAttribute="leading" secondItem="zAq-8W-OAu" secondAttribute="leadingMargin" id="4dA-gJ-9cA"/>
                                                 <constraint firstItem="FMY-7P-clW" firstAttribute="leading" secondItem="zAq-8W-OAu" secondAttribute="leadingMargin" id="Cfc-Os-8xy"/>
-                                                <constraint firstItem="kfx-Jv-QAd" firstAttribute="leading" secondItem="FMY-7P-clW" secondAttribute="trailing" constant="8" id="FSe-0K-ff6"/>
+                                                <constraint firstItem="FMY-7P-clW" firstAttribute="trailing" secondItem="zAq-8W-OAu" secondAttribute="trailingMargin" id="J4A-hi-ps3"/>
                                                 <constraint firstItem="FMY-7P-clW" firstAttribute="top" secondItem="zAq-8W-OAu" secondAttribute="topMargin" id="Lia-mg-3qH"/>
-                                                <constraint firstAttribute="trailing" secondItem="kfx-Jv-QAd" secondAttribute="trailing" constant="12" id="XVg-hb-UIm"/>
-                                                <constraint firstItem="kfx-Jv-QAd" firstAttribute="centerY" secondItem="zAq-8W-OAu" secondAttribute="centerY" id="iNT-zO-xgg"/>
+                                                <constraint firstItem="FK0-pp-DRr" firstAttribute="top" secondItem="FMY-7P-clW" secondAttribute="bottom" constant="4" id="lOD-D5-Tnq"/>
                                                 <constraint firstItem="FK0-pp-DRr" firstAttribute="bottom" secondItem="zAq-8W-OAu" secondAttribute="bottomMargin" id="rCN-2x-UPC"/>
+                                                <constraint firstAttribute="trailing" secondItem="FK0-pp-DRr" secondAttribute="trailing" constant="20" id="zDR-qX-sRZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblCreatedDate" destination="FK0-pp-DRr" id="dIU-NO-G6H"/>
                                             <outlet property="lblTitle" destination="FMY-7P-clW" id="3V9-r3-CnR"/>
-                                            <outlet property="switchActivate" destination="kfx-Jv-QAd" id="ITQ-CC-1Us"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

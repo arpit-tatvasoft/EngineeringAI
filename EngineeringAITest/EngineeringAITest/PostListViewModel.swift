@@ -21,13 +21,6 @@ final class PostListViewModel {
     var postList: BehaviorRelay<[PostListViewModel]> = .init(value: [])
     var selectedPost:Int = 0
     var pageNumber:Int = 1
-    
-    func selectPost(index: Int) {
-        var postsTemp = self.posts.value
-        postsTemp[index].isActivated = !postsTemp[index].isActivated
-        self.posts.accept(postsTemp)
-    }
-    
 }
 
 extension PostListViewModel {
@@ -36,14 +29,19 @@ extension PostListViewModel {
         PostViewInteractor.getPosts(page: page).subscribe(onNext: { [weak self] response in
             guard let `self` = self else { return }
             if let posts = response.data as? [Post] {
-                if self.posts.value.count == 0 {
-                    self.posts.accept(posts)
+                if posts.count == 0 {
+                    self.state.onNext(.failure(.unknown))
+                    print("No more new posts")
                 } else {
-                    self.posts.accept(self.posts.value + posts)
+                    if self.posts.value.count == 0 {
+                        self.posts.accept(posts)
+                    } else {
+                        self.posts.accept(self.posts.value + posts)
+                    }
+                    
+                    self.state.onNext(.success(self))
+                    self.pageNumber = self.pageNumber + 1
                 }
-                
-                self.state.onNext(.success(self))
-                self.pageNumber = self.pageNumber + 1
             } else {
                 self.postList.accept([])
                 self.state.onNext(.failure(.noData))
