@@ -35,6 +35,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         // MARK: - Custom Method
         private func setupUI() {
             self.tableViewPosts.refreshControl = refreshControl
+            self.tableViewPosts.estimatedRowHeight = 80.0
             tableViewPosts.rx.setDelegate(self).disposed(by: disposBag)
             self.viewModel.getPostList(page: self.viewModel.pageNumber)
             self.navigationItem.title = "selected posts"
@@ -52,12 +53,11 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         }
     
         private func setupBinding() {
-            viewModel.posts.asObservable().bind(to: tableViewPosts.rx.items(cellIdentifier: ))
+            
             viewModel.posts.asObservable().bind(to: tableViewPosts.rx.items(cellIdentifier: "PostCell", cellType: PostCell.self)) { (_, post: Post, cell) in
-                cell.postListModel = post
-                }.disposed(by: disposBag)
-            
-            
+                cell.post = post
+                }.disposed(by: self.disposBag)
+
             viewModel.state.subscribe(onNext :{ state in
                 switch state {
                 case .loading:
@@ -87,7 +87,8 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                 }).disposed(by: disposBag)
         }
     }
-    
+
+
     extension PostViewController : UITableViewDelegate {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

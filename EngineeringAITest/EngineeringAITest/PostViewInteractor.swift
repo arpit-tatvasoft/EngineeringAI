@@ -13,7 +13,7 @@ import RxCocoa
 struct PostViewInteractor {
     
     //MARK:- Webservice Methods
-    static func getPosts(page: Int) -> Observable<TTResponse> {
+    static func getPosts(page: Int) -> Observable<Response> {
         return Webservice.API.sendRequest(.posts(page))
     }
 }

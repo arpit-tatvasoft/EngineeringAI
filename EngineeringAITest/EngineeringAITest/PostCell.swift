@@ -16,10 +16,22 @@ class PostCell: UITableViewCell {
 
     var post: Post? {
         didSet {
-            self.lblPostName.text = postListModel?.title
-            self.lblCreatedDate.text = postListModel?.createdAt
-            self.switchAtivate.isOn = postListModel?.isActivated ?? false
+            self.lblTitle.text = post?.title
+            self.lblCreatedDate.text = post?.createdAt
+            self.switchActivate.isOn = post?.isActivated ?? false
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
 
 }

@@ -83,11 +83,11 @@ final class Webservice: SessionManager {
         
         return Observable<Response>.create { observer -> Disposable in
             
-            guard Reachability.isConnectedToNetwork() == true else {
-                observer.onError(WebError.noInternet)
-                observer.onCompleted()
-                return Disposables.create()
-            }
+//            guard Reachability.isConnectedToNetwork() == true else {
+//                observer.onError(WebError.noInternet)
+//                observer.onCompleted()
+//                return Disposables.create()
+//            }
             
             let path = route.path.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlQueryAllowed)
             
@@ -133,11 +133,11 @@ final class Webservice: SessionManager {
                     } else if error._code == NSURLErrorCancelled {
                         observer.onError(WebError.cancel)
                     } else if error._code == NSURLErrorNetworkConnectionLost {
-                        if Reachability.isConnectedToNetwork() == true {
-                            //Slow Internet connection
-                        } else {
-                            //Internet disconnected before completion of request
-                        }
+//                        if Reachability.isConnectedToNetwork() == true {
+//                            //Slow Internet connection
+//                        } else {
+//                            //Internet disconnected before completion of request
+//                        }
                         observer.onError(WebError.unknown)
                     } else {//
                         observer.onError(WebError.unknown)

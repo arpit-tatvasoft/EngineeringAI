@@ -23,6 +23,7 @@
 		6751361D234C8E42008180D5 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751361B234C8E42008180D5 /* ViewModelState.swift */; };
 		6751361E234C8E42008180D5 /* TTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751361C234C8E42008180D5 /* TTResponse.swift */; };
 		67513620234C8E86008180D5 /* PostViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751361F234C8E86008180D5 /* PostViewInteractor.swift */; };
+		67513622234C9596008180D5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67513621234C9596008180D5 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		6751361B234C8E42008180D5 /* ViewModelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 		6751361C234C8E42008180D5 /* TTResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTResponse.swift; sourceTree = "<group>"; };
 		6751361F234C8E86008180D5 /* PostViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewInteractor.swift; sourceTree = "<group>"; };
+		67513621234C9596008180D5 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		C1E41DB5E9C00D7F7B72247D /* Pods_EngineeringAITest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EngineeringAITest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6821A28F5B3B94B82BA418B /* Pods-EngineeringAITest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngineeringAITest.release.xcconfig"; path = "Target Support Files/Pods-EngineeringAITest/Pods-EngineeringAITest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				6751360F234C8A1D008180D5 /* UITableView+Extension.swift */,
 				6751361C234C8E42008180D5 /* TTResponse.swift */,
 				6751361B234C8E42008180D5 /* ViewModelState.swift */,
+				67513621234C9596008180D5 /* Response.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				67513620234C8E86008180D5 /* PostViewInteractor.swift in Sources */,
 				6751360D234C8A14008180D5 /* Router.swift in Sources */,
 				67513611234C8A1D008180D5 /* UITableView+Extension.swift in Sources */,
+				67513622234C9596008180D5 /* Response.swift in Sources */,
 				67513612234C8A1D008180D5 /* UINavigationController.swift in Sources */,
 				6751361A234C8CFA008180D5 /* PostCell.swift in Sources */,
 				6751360E234C8A14008180D5 /* Webservice.swift in Sources */,
