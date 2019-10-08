@@ -79,6 +79,12 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }).disposed(by: disposBag)
+        
+//        tableViewPosts.rx.willDisplayCell
+//            .subscribe(onNext: { cell, indexPath in
+//                if indexPath.row == self.viewModel.posts.value.count - 3 {
+//                }
+//            }).disposed(by: disposBag)
     }
 }
 
